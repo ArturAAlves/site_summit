@@ -94,9 +94,13 @@
           <p></p>
         </div>
       </div>
+
+
       <div>
+
+
         <div class="row oradores">
-          <div id="carouselOradores" class="row carousel slide" data-ride="carousel" data-pause="hover">
+         <!-- <div id="carouselOradores" class="row carousel slide" data-ride="carousel" data-pause="hover">
             <div class="col-1">
               <a class="control-prev" href="#carouselOradores" role="button" data-slide="prev">
                 <img src="./img/svg/prev.svg" aria-hidden="true">
@@ -121,7 +125,7 @@
                       <img src="./img/oradores/José Pedro Soares - Financiamento bancario.jpg" alt="Orador do Summit - José Pedro Soares">
                     </div>
                     <h3>José Pedro Soares</h3>
-                    <h4>Montepio</h4><!--Isso é uma empresa?-->
+                    <h4>Montepio</h4> Isso é uma empresa?
                     <h5>Gestor de Clientes Empresas no Departamento Microcrédito com 
                       foco exclusivo nos projetos de investimentos.</h5>
                   </div>
@@ -178,7 +182,8 @@
                 <span class="sr-only">Next</span>
               </a>
             </div>
-          </div>
+          </div> -->
+
           <div id="oradores3" class="row target collapse">
             <div class="col-lg-4 col-md-5 col-sm-8">
               <div class="card orador">
@@ -711,44 +716,45 @@
     });
 
     /*Botão Ver mais Carousel e Cards oradores*/
-    let botao2 = document.getElementById("btncollapse2");
-    let carouselOradores = document.getElementById("carouselOradores");
+     let botao2 = document.getElementById("btncollapse2");
+   //let carouselOradores = document.getElementById("carouselOradores");
     let oradores3 = document.getElementById("oradores3");
     let todosoradores = document.getElementById("todosoradores");
 
     let cardshow = document.getElementsByClassName("cardshow");
     function oradoresBreak(media) {
       if (media.matches) {
-        carouselOradores.style.display = "none";
-        oradores3.classList.remove("target");
+        
         oradores3.style.display = "flex";
         oradores3.classList.add("justify-content-center");
         todosoradores.classList.add("justify-content-center")
 
         $('#todosoradores').on('show.bs.collapse', function () {
           botao2.innerHTML = "Ver menos"
-          carouselOradores.style.display = "none";
+          //carouselOradores.style.display = "none";
+          oradores3.style.display = "flex";
         });
         $('#todosoradores').on('hide.bs.collapse', function () {
           botao2.innerHTML = "Ver mais"
-          carouselOradores.style.display = "none";
+          //carouselOradores.style.display = "none";
           oradores3.style.display = "flex";
         });
       } else {
-        carouselOradores.style.display = "flex";
-        oradores3.style.display = "none";
+        //carouselOradores.style.display = "flex";
+        //oradores3.style.display = "none";
+        oradores3.style.display = "flex";
         todosoradores.style.display = "none";
 
         $('#todosoradores').on('show.bs.collapse', function () {
           botao2.innerHTML = "Ver menos"
-          carouselOradores.style.display = "none";
+          //carouselOradores.style.display = "none";
           oradores3.style.display = "flex";
           todosoradores.style.display = "flex";
         });
         $('#todosoradores').on('hide.bs.collapse', function () {
           botao2.innerHTML = "Ver mais"
-          carouselOradores.style.display = "flex";
-          oradores3.style.display = "none";
+          //carouselOradores.style.display = "flex";
+          oradores3.style.display = "flex";
           todosoradores.style.display = "none"
         });
       }
@@ -776,7 +782,7 @@
         });
       }, false);
     })();
-
+ 
     /* Contador */
     var countDownDate = new Date("Feb 11, 2020 09:00:00").getTime();
     var x = setInterval(function () {
